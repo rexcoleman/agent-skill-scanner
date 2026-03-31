@@ -233,8 +233,8 @@ YES — one-sentence recommendation, no paper reading required.
 | 6 | Alternative label sources considered | [x] | 3 alternatives evaluated — §6 |
 | 7 | Statistical plan: seeds, tests, CIs | [x] | McNemar's + bootstrap CIs — §7 |
 | 8 | Related work: >=3 papers (Workshop tier) | [x] | 10 papers — §8 |
-| 9 | Hypotheses pre-registered in HYPOTHESIS_REGISTRY | [ ] | NEXT — §HYPOTHESIS_REGISTRY.md |
-| 10 | lock_commit set in HYPOTHESIS_REGISTRY | [ ] | After commit |
+| 9 | Hypotheses pre-registered in HYPOTHESIS_REGISTRY | [x] | 5 hypotheses — HYPOTHESIS_REGISTRY.md |
+| 10 | lock_commit set in HYPOTHESIS_REGISTRY | [x] | `6aa582c` |
 | 11 | Target venue identified | [x] | arXiv + AISec Workshop |
 | 12 | This document committed before any training script | [ ] | Will commit now |
 
