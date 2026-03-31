@@ -83,6 +83,18 @@ This scanner was built from findings in the [agent-skill-scanner research projec
 - Rules cover known attack patterns from published research, not zero-days
 - False positives possible on skills that legitimately use system commands
 
+## Also available as a GitHub Action
+
+Add agent-skill-scanner to your CI pipeline:
+
+```yaml
+- uses: rexcoleman/agent-skill-scan-action@v1
+  with:
+    path: './skills/'
+```
+
+See [agent-skill-scan-action](https://github.com/rexcoleman/agent-skill-scan-action) for full documentation.
+
 ## License
 
 [MIT](LICENSE) — Rex Coleman, 2026
