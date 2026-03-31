@@ -97,6 +97,12 @@ Add agent-skill-scanner to your CI pipeline:
 
 See [agent-skill-scan-action](https://github.com/rexcoleman/agent-skill-scan-action) for full documentation.
 
+## Also available as an MCP server
+
+Use agent-skill-scanner in Claude Code:
+
+See [agent-skill-scan-mcp](https://github.com/rexcoleman/agent-skill-scan-mcp) for setup instructions.
+
 ## License
 
 [MIT](LICENSE) — Rex Coleman, 2026
