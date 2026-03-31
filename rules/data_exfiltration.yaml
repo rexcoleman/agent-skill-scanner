@@ -1,0 +1,78 @@
+# Data Exfiltration Detection Rules
+# Source: OWASP LLM Top 10 (LLM06), software supply chain security patterns
+# Patterns derived from first principles — NOT from inspecting malicious skills.
+
+rules:
+  - id: EXFIL-001
+    category: data_exfiltration
+    severity: CRITICAL
+    title: Credential/secret harvesting instructions
+    description: Skill instructs the agent to read, collect, or transmit credentials, API keys, or secrets.
+    target: code_blocks
+    patterns:
+      - "(?:cat|head|tail|less|more)\\s+(?:~/.ssh/|~/.aws/|~/.env|~/.gnupg/|~/.config/gcloud/)"
+      - "(?:curl|wget|fetch|nc)\\s+.*(?:~/.ssh|~/.aws|credentials|api.?key|secret.?key)"
+      - "(?:send|upload|post|transmit|curl|wget)\\s+.*(?:SSH_KEY|AWS_SECRET|API_KEY|PRIVATE_KEY|SECRET_KEY|PASSWORD)"
+
+  - id: EXFIL-002
+    category: data_exfiltration
+    severity: HIGH
+    title: External data transmission
+    description: Skill instructs the agent to send data to external URLs, webhooks, or services not related to its stated function.
+    target: code_blocks
+    patterns:
+      - "curl\\s+.*-(?:X\\s+)?POST\\s+.*https?://"
+      - "wget\\s+.*--post"
+      - "fetch\\(.*https?://.*\\{.*body"
+      - "requests?\\.post\\(.*https?://"
+      - "webhook\\.site|requestbin|pipedream|ngrok|burp"
+      - "discord\\.com/api/webhooks"
+
+  - id: EXFIL-003
+    category: data_exfiltration
+    severity: HIGH
+    title: DNS/URL-based data exfiltration
+    description: Skill uses DNS queries or URL parameters to exfiltrate data.
+    target: full_text
+    patterns:
+      - "\\$\\(.*\\)\\..*\\.(?:oastify|interact\\.sh|dnslog|ceye\\.io|burpcollaborator)"
+      - "curl.*\\?(?:data|payload|exfil|dump|leak)="
+      - "nslookup\\s+\\$|dig\\s+\\$|host\\s+\\$"
+
+  - id: EXFIL-005
+    category: data_exfiltration
+    severity: MEDIUM
+    title: Shell variable exfiltration via HTTP
+    description: Skill sends shell variable values to external URLs, potentially leaking system or project information.
+    target: code_blocks
+    patterns:
+      - "curl\\s+.*\\$\\w+.*https?://"
+      - "curl\\s+.*https?://.*\\$\\w+"
+      - "wget\\s+.*\\$\\w+.*https?://"
+      - "wget\\s+.*https?://.*\\$\\w+"
+
+  - id: EXFIL-006
+    category: data_exfiltration
+    severity: MEDIUM
+    title: Python/Node HTTP request with system info
+    description: Skill uses programming language HTTP libraries to send system information to external URLs.
+    target: code_blocks
+    patterns:
+      - "urllib\\.request\\.(?:urlopen|Request).*(?:hostname|os\\.popen|environ|getenv|expanduser)"
+      - "requests?\\.(?:get|post)\\(.*(?:hostname|os\\.popen|environ|getenv|expanduser)"
+      - "fetch\\(.*(?:hostname|os\\.popen|process\\.env)"
+      - "os\\.popen\\(.*\\).*(?:urllib|requests|fetch|http)"
+      - "(?:os\\.environ|os\\.path\\.expanduser|os\\.popen|subprocess).*urllib\\.request"
+      - "urllib\\.request.*(?:os\\.environ|os\\.path\\.expanduser|os\\.popen|subprocess)"
+
+  - id: EXFIL-004
+    category: data_exfiltration
+    severity: MEDIUM
+    title: Suspicious outbound URL in skill body
+    description: Skill references URLs that appear to be data collection endpoints rather than legitimate API endpoints.
+    target: urls
+    patterns:
+      - "(?:pastebin|hastebin|dpaste|ghostbin|rentry)\\.(?:com|org|co)"
+      - "(?:transfer\\.sh|file\\.io|0x0\\.st|temp\\.sh)"
+      - "(?:requestbin|webhook\\.site|pipedream\\.net)"
+      - "(?:ngrok\\.io|serveo\\.net|localtunnel\\.me)"

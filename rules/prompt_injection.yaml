@@ -1,0 +1,67 @@
+# Prompt Injection Detection Rules
+# Source: OWASP LLM Top 10 (LLM01), InjecAgent taxonomy, ToolHijacker attack vectors
+# These patterns are derived from first principles — NOT from inspecting malicious skills.
+
+rules:
+  - id: INJ-001
+    category: prompt_injection
+    severity: CRITICAL
+    title: Direct instruction override
+    description: Skill contains text that attempts to override the agent's system prompt or prior instructions.
+    target: body
+    patterns:
+      - "ignore\\s+(all\\s+)?previous\\s+instructions"
+      - "ignore\\s+(all\\s+)?prior\\s+instructions"
+      - "disregard\\s+(all\\s+)?previous"
+      - "forget\\s+(all\\s+)?(your|previous)\\s+instructions"
+      - "override\\s+(your|system|all)\\s+(prompt|instructions)"
+      - "you\\s+are\\s+now\\s+(?:a|an|the)\\s+(?!.*(?:assistant|helper|tool))"
+
+  - id: INJ-002
+    category: prompt_injection
+    severity: HIGH
+    title: Hidden instruction in markdown
+    description: Skill uses HTML comments, zero-width characters, or invisible text to hide instructions from human reviewers.
+    target: full_text
+    patterns:
+      - "<!--.*(?:instruction|command|execute|ignore|override|secret|hidden|prompt).*-->"
+      - "\\u200b|\\u200c|\\u200d|\\ufeff"
+      - "\\\\u200[0-9a-fA-F]"
+      - "<span\\s+style=[\"'].*display:\\s*none.*[\"']>"
+      - "<div\\s+style=[\"'].*visibility:\\s*hidden.*[\"']>"
+
+  - id: INJ-003
+    category: prompt_injection
+    severity: HIGH
+    title: Role assumption attack
+    description: Skill attempts to make the agent assume a different identity or role with elevated privileges.
+    target: body
+    patterns:
+      - "you\\s+are\\s+now\\s+in\\s+(?:developer|admin|debug|maintenance|unrestricted)\\s+mode"
+      - "enter\\s+(?:developer|admin|debug|maintenance|DAN|jailbreak)\\s+mode"
+      - "act\\s+as\\s+(?:if|though)\\s+you\\s+(?:have|are|were)\\s+(?:no|unlimited|unrestricted)"
+      - "pretend\\s+(?:you\\s+are|to\\s+be)\\s+(?:a\\s+)?(?:hacker|attacker|adversary)"
+      - "from\\s+now\\s+on[,.]?\\s+you\\s+(?:will|must|should|shall)\\s+(?:always|only|never)"
+
+  - id: INJ-004
+    category: prompt_injection
+    severity: MEDIUM
+    title: Indirect injection via output manipulation
+    description: Skill contains patterns designed to manipulate agent output or downstream consumers.
+    target: body
+    patterns:
+      - "when\\s+(?:you|the\\s+(?:user|agent))\\s+(?:see|encounter|read)\\s+this"
+      - "if\\s+(?:you|the\\s+agent)\\s+(?:are|is)\\s+(?:reading|processing)\\s+this"
+      - "IMPORTANT:\\s*(?:do\\s+not|never|always)\\s+(?:mention|reveal|disclose|share)"
+      - "(?:do\\s+not|never)\\s+(?:tell|inform|reveal\\s+to)\\s+the\\s+user"
+
+  - id: INJ-005
+    category: prompt_injection
+    severity: MEDIUM
+    title: Prompt leaking attempt
+    description: Skill attempts to extract the agent's system prompt or internal configuration.
+    target: body
+    patterns:
+      - "(?:print|show|display|reveal|output|repeat)\\s+(?:your|the)\\s+(?:system\\s+)?(?:prompt|instructions|rules|constraints)"
+      - "what\\s+(?:are|is)\\s+your\\s+(?:system\\s+)?(?:prompt|instructions|rules)"
+      - "(?:copy|paste|echo)\\s+(?:your|the)\\s+(?:entire|full|complete)\\s+(?:system\\s+)?prompt"

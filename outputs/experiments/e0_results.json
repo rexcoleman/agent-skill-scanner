@@ -1,0 +1,75 @@
+{
+  "e0a_positive_control": {
+    "findings": 13,
+    "categories": [
+      "prompt_injection",
+      "data_exfiltration",
+      "capability_escalation",
+      "encoded_payload"
+    ],
+    "max_severity": "CRITICAL",
+    "verdict": "PASS"
+  },
+  "e0b_negative_control": {
+    "findings": 0,
+    "high_critical": 0,
+    "verdict": "PASS"
+  },
+  "e0b_official_fp_rate": {
+    "total_skills": 51,
+    "skills_with_critical": 3,
+    "fp_rate": 0.059,
+    "verdict": "PASS"
+  },
+  "e0c_dose_response": {
+    "levels": [
+      {
+        "level": "e0c_level1_obvious.md",
+        "findings": 6,
+        "max_severity": "CRITICAL",
+        "categories": [
+          "prompt_injection",
+          "data_exfiltration",
+          "capability_escalation"
+        ]
+      },
+      {
+        "level": "e0c_level2_moderate.md",
+        "findings": 2,
+        "max_severity": "CRITICAL",
+        "categories": [
+          "data_exfiltration",
+          "capability_escalation"
+        ]
+      },
+      {
+        "level": "e0c_level3_subtle.md",
+        "findings": 1,
+        "max_severity": "MEDIUM",
+        "categories": [
+          "data_exfiltration"
+        ]
+      },
+      {
+        "level": "e0c_level4_stealthy.md",
+        "findings": 4,
+        "max_severity": "MEDIUM",
+        "categories": [
+          "data_exfiltration"
+        ]
+      },
+      {
+        "level": "e0c_level5_advanced.md",
+        "findings": 2,
+        "max_severity": "MEDIUM",
+        "categories": [
+          "data_exfiltration"
+        ]
+      }
+    ],
+    "monotonic_decrease": false,
+    "all_detected": true,
+    "verdict": "PASS"
+  },
+  "overall_verdict": "PASS"
+}

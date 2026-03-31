@@ -1,0 +1,77 @@
+# Capability Escalation Detection Rules
+# Source: OWASP LLM Top 10 (LLM08), OpenClaw skill permission model, SkillScan taxonomy
+# Patterns derived from first principles — NOT from inspecting malicious skills.
+
+rules:
+  - id: CAP-001
+    category: capability_escalation
+    severity: CRITICAL
+    title: Privilege escalation commands
+    description: Skill instructs the agent to run commands with elevated privileges.
+    target: code_blocks
+    patterns:
+      - "sudo\\s+(?!-V|--version)"
+      - "chmod\\s+[0-7]*[67][0-7]{2}"
+      - "chmod\\s+\\+s"
+      - "chown\\s+root"
+      - "su\\s+-\\s"
+      - "pkexec"
+      - "doas\\s+"
+
+  - id: CAP-002
+    category: capability_escalation
+    severity: HIGH
+    title: System modification commands
+    description: Skill instructs destructive or system-modifying operations.
+    target: code_blocks
+    patterns:
+      - "rm\\s+-rf\\s+/"
+      - "rm\\s+-rf\\s+~"
+      - "rm\\s+-rf\\s+\\*"
+      - "mkfs\\."
+      - "dd\\s+if=.*of=/dev/"
+      - ":(){ :|:& };:"
+      - "\\|\\s*bash"
+      - "\\|\\s*sh\\b"
+      - "eval\\s+\\$\\("
+
+  - id: CAP-003
+    category: capability_escalation
+    severity: HIGH
+    title: Shell spawning or reverse shell
+    description: Skill contains patterns consistent with reverse shell or arbitrary shell execution.
+    target: full_text
+    patterns:
+      - "bash\\s+-i\\s+>&\\s*/dev/tcp/"
+      - "nc\\s+.*-e\\s+/bin/"
+      - "python.*-c.*socket.*connect"
+      - "php\\s+-r.*fsockopen"
+      - "ruby\\s+-rsocket.*TCPSocket"
+      - "mkfifo\\s+/tmp/"
+      - "/dev/tcp/"
+
+  - id: CAP-004
+    category: capability_escalation
+    severity: MEDIUM
+    title: Persistence mechanism
+    description: Skill installs persistence mechanisms (cron jobs, startup scripts, aliases).
+    target: code_blocks
+    patterns:
+      - "crontab\\s+-[el]?\\s*(?!-l)"
+      - ">>\\s*~/.(?:bashrc|zshrc|profile|bash_profile)"
+      - "/etc/cron"
+      - "systemctl\\s+enable"
+      - "launchctl\\s+load"
+      - ">>\\s*/etc/(?:rc\\.local|init\\.d)"
+
+  - id: CAP-005
+    category: capability_escalation
+    severity: MEDIUM
+    title: Skill installs additional skills or modifies agent config
+    description: Skill attempts to install other skills or modify the agent's configuration, enabling capability creep.
+    target: code_blocks
+    patterns:
+      - "^\\s*openclaw\\s+install\\s+"
+      - "^\\s*openclaw\\s+config\\s+set"
+      - "^\\s*openclaw\\s+skill\\s+(?:add|install|enable)"
+      - "^\\s*(?:sed|echo|cat)\\s+.*(?:\\.openclaw/|clawd.*config)"

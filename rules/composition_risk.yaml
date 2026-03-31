@@ -1,0 +1,40 @@
+# Composition Risk Detection Rules
+# Source: ToolHijacker (arXiv:2504.19793), MCPTox patterns, agent composition research
+# These detect indicators that a skill may be designed to interact dangerously
+# with other skills. Single-skill analysis has inherent limits here — these are
+# risk INDICATORS, not definitive findings.
+
+rules:
+  - id: COMP-001
+    category: composition_risk
+    severity: MEDIUM
+    title: Skill references or depends on other skills
+    description: Skill explicitly references other skills, which could enable cross-skill attack chains.
+    target: body
+    patterns:
+      - "(?:use|invoke|call|run|trigger|activate)\\s+(?:the\\s+)?(?:skill|tool)\\s+['\"]\\w+"
+      - "requires?\\s+(?:the\\s+)?['\"]?\\w+['\"]?\\s+skill"
+      - "depends?\\s+on\\s+(?:the\\s+)?['\"]?\\w+['\"]?\\s+(?:skill|tool)"
+
+  - id: COMP-002
+    category: composition_risk
+    severity: MEDIUM
+    title: Skill writes to shared state or files used by other skills
+    description: Skill modifies shared configuration, environment variables, or files that other skills may read.
+    target: code_blocks
+    patterns:
+      - ">>\\s*(?:~/.config/openclaw|~/.clawd)"
+      - "echo.*>>\\s*\\.env\\b"
+      - "echo.*>>\\s*~/\\.(?:bashrc|zshrc|profile)"
+
+  - id: COMP-003
+    category: composition_risk
+    severity: LOW
+    title: Overly broad file system access
+    description: Skill accesses files or directories far outside its apparent scope.
+    target: code_blocks
+    patterns:
+      - "find\\s+/\\s+"
+      - "ls\\s+-[lLaR]*\\s+/"
+      - "cat\\s+/etc/(?:passwd|shadow|hosts)"
+      - "(?:read|cat|head|tail)\\s+.*(?:/home/|/Users/|/root/)"
