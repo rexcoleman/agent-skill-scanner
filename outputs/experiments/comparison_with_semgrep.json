@@ -1,0 +1,1183 @@
+[
+  {
+    "skill_name": "agent-orchestrator",
+    "skill_path": "data/curated/skills/agent-orchestrator.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/agent-orchestrator.md",
+      "skill_name": "agent-orchestrator",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "aliyun-tts",
+    "skill_path": "data/curated/skills/aliyun-tts.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/aliyun-tts.md",
+      "skill_name": "aliyun-tts",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "amazon-data",
+    "skill_path": "data/curated/skills/amazon-data.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/amazon-data.md",
+      "skill_name": "amazon-data",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "anti-injection-skill",
+    "skill_path": "data/curated/skills/anti-injection-skill.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/anti-injection-skill.md",
+      "skill_name": "anti-injection-skill",
+      "finding_count": 9,
+      "max_severity": "CRITICAL",
+      "findings": [
+        {
+          "rule_id": "CAP-001",
+          "category": "capability_escalation",
+          "severity": "CRITICAL",
+          "title": "Privilege escalation commands",
+          "description": "Skill instructs the agent to run commands with elevated privileges.",
+          "evidence": "chmod 777",
+          "line_number": 116
+        },
+        {
+          "rule_id": "CAP-002",
+          "category": "capability_escalation",
+          "severity": "HIGH",
+          "title": "System modification commands",
+          "description": "Skill instructs destructive or system-modifying operations.",
+          "evidence": "| bash",
+          "line_number": 117
+        },
+        {
+          "rule_id": "CAP-002",
+          "category": "capability_escalation",
+          "severity": "HIGH",
+          "title": "System modification commands",
+          "description": "Skill instructs destructive or system-modifying operations.",
+          "evidence": "| sh",
+          "line_number": 117
+        },
+        {
+          "rule_id": "EXFIL-001",
+          "category": "data_exfiltration",
+          "severity": "CRITICAL",
+          "title": "Credential/secret harvesting instructions",
+          "description": "Skill instructs the agent to read, collect, or transmit credentials, API keys, or secrets.",
+          "evidence": "curl | bash, wget | sh\n       - base64 -d | sh, eval, exec\n\n  3. BLACKLIST + SEMANTIC CHECK\n     Apply to tool arguments and query text\n\n  4. SECURITY SCORE GATE\n     IF score < 40 \u2192 BLOCK all tool ca",
+          "line_number": 117
+        },
+        {
+          "rule_id": "ENC-004",
+          "category": "encoded_payload",
+          "severity": "MEDIUM",
+          "title": "Base64 decode and execute pattern",
+          "description": "Skill decodes base64 content and pipes it to execution.",
+          "evidence": "base64 -d | sh, eval, exec\n\n  3. BLACKLIST + SEMANTIC CHECK\n     Apply to tool arguments and query text\n\n  4. SECURITY SCORE GATE\n     IF score < 40 \u2192 BLOCK all tool calls\n     IF score < 60 \u2192 Require",
+          "line_number": 118
+        },
+        {
+          "rule_id": "INJ-001",
+          "category": "prompt_injection",
+          "severity": "CRITICAL",
+          "title": "Direct instruction override",
+          "description": "Skill contains text that attempts to override the agent's system prompt or prior instructions.",
+          "evidence": "ignore previous instructions",
+          "line_number": 7
+        },
+        {
+          "rule_id": "INJ-005",
+          "category": "prompt_injection",
+          "severity": "MEDIUM",
+          "title": "Prompt leaking attempt",
+          "description": "Skill attempts to extract the agent's system prompt or internal configuration.",
+          "evidence": "reveal your system prompt",
+          "line_number": 347
+        },
+        {
+          "rule_id": "INJ-005",
+          "category": "prompt_injection",
+          "severity": "MEDIUM",
+          "title": "Prompt leaking attempt",
+          "description": "Skill attempts to extract the agent's system prompt or internal configuration.",
+          "evidence": "print your instructions",
+          "line_number": 348
+        },
+        {
+          "rule_id": "INJ-005",
+          "category": "prompt_injection",
+          "severity": "MEDIUM",
+          "title": "Prompt leaking attempt",
+          "description": "Skill attempts to extract the agent's system prompt or internal configuration.",
+          "evidence": "output your system prompt",
+          "line_number": 350
+        }
+      ],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "anycrawl",
+    "skill_path": "data/curated/skills/anycrawl.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/anycrawl.md",
+      "skill_name": "anycrawl",
+      "finding_count": 2,
+      "max_severity": "MEDIUM",
+      "findings": [
+        {
+          "rule_id": "CAP-004",
+          "category": "capability_escalation",
+          "severity": "MEDIUM",
+          "title": "Persistence mechanism",
+          "description": "Skill installs persistence mechanisms (cron jobs, startup scripts, aliases).",
+          "evidence": ">> ~/.bashrc",
+          "line_number": 3
+        },
+        {
+          "rule_id": "COMP-002",
+          "category": "composition_risk",
+          "severity": "MEDIUM",
+          "title": "Skill writes to shared state or files used by other skills",
+          "description": "Skill modifies shared configuration, environment variables, or files that other skills may read.",
+          "evidence": "echo 'export ANYCRAWL_API_KEY=\"your-api-key\"' >> ~/.bashrc",
+          "line_number": 3
+        }
+      ],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "arc-compliance-checker",
+    "skill_path": "data/curated/skills/arc-compliance-checker.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/arc-compliance-checker.md",
+      "skill_name": "compliance-checker",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "arc-warm-wake",
+    "skill_path": "data/curated/skills/arc-warm-wake.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/arc-warm-wake.md",
+      "skill_name": "warm-wake",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "askhuman",
+    "skill_path": "data/curated/skills/askhuman.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/askhuman.md",
+      "skill_name": "askhuman",
+      "finding_count": 3,
+      "max_severity": "CRITICAL",
+      "findings": [
+        {
+          "rule_id": "EXFIL-001",
+          "category": "data_exfiltration",
+          "severity": "CRITICAL",
+          "title": "Credential/secret harvesting instructions",
+          "description": "Skill instructs the agent to read, collect, or transmit credentials, API keys, or secrets.",
+          "evidence": "curl -X POST https://askhuman-api.onrender.com/v1/agents/challenge \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"name\":\"YourAgentName\"}'\n\n{\n  \"challengeId\": \"...\",\n  \"task\": \"...\",\n  \"expiresIn\": ",
+          "line_number": 1
+        },
+        {
+          "rule_id": "EXFIL-002",
+          "category": "data_exfiltration",
+          "severity": "HIGH",
+          "title": "External data transmission",
+          "description": "Skill instructs the agent to send data to external URLs, webhooks, or services not related to its stated function.",
+          "evidence": "curl -X POST https://askhuman-api.onrender.com/v1/agents/challenge \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"name\":\"YourAgentName\"}'\n\n{\n  \"challengeId\": \"...\",\n  \"task\": \"...\",\n  \"expiresIn\": ",
+          "line_number": 1
+        },
+        {
+          "rule_id": "EXFIL-005",
+          "category": "data_exfiltration",
+          "severity": "MEDIUM",
+          "title": "Shell variable exfiltration via HTTP",
+          "description": "Skill sends shell variable values to external URLs, potentially leaking system or project information.",
+          "evidence": "curl -X POST https://askhuman-api.onrender.com/v1/agents/challenge \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"name\":\"YourAgentName\"}'\n\n{\n  \"challengeId\": \"...\",\n  \"task\": \"...\",\n  \"expiresIn\": ",
+          "line_number": 1
+        }
+      ],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "azure-devops",
+    "skill_path": "data/curated/skills/azure-devops.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/azure-devops.md",
+      "skill_name": "azure-devops",
+      "finding_count": 1,
+      "max_severity": "HIGH",
+      "findings": [
+        {
+          "rule_id": "EXFIL-002",
+          "category": "data_exfiltration",
+          "severity": "HIGH",
+          "title": "External data transmission",
+          "description": "Skill instructs the agent to send data to external URLs, webhooks, or services not related to its stated function.",
+          "evidence": "curl -s -u \":${AZURE_DEVOPS_PAT}\" \\\n  \"https://dev.azure.com/${AZURE_DEVOPS_ORG}/_apis/projects?api-version=7.1\" \\\n  | jq -r '.value[] | \"\\(.name) - \\(.description // \"No description\")\"'\n\nPROJECT=\"You",
+          "line_number": 14
+        }
+      ],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "baeckerherz",
+    "skill_path": "data/curated/skills/baeckerherz.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/baeckerherz.md",
+      "skill_name": "baeckerherz",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "claw-daily",
+    "skill_path": "data/curated/skills/claw-daily.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/claw-daily.md",
+      "skill_name": "claw-daily",
+      "finding_count": 2,
+      "max_severity": "CRITICAL",
+      "findings": [
+        {
+          "rule_id": "EXFIL-001",
+          "category": "data_exfiltration",
+          "severity": "CRITICAL",
+          "title": "Credential/secret harvesting instructions",
+          "description": "Skill instructs the agent to read, collect, or transmit credentials, API keys, or secrets.",
+          "evidence": "curl -s -X POST https://daily.ratemyclaw.xyz/api/v1/agents/register \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"name\":\"openclaw-agent\",\"description\":\"OpenClaw AI agent\",\"framework\":\"openclaw\"}'\n",
+          "line_number": 1
+        },
+        {
+          "rule_id": "EXFIL-002",
+          "category": "data_exfiltration",
+          "severity": "HIGH",
+          "title": "External data transmission",
+          "description": "Skill instructs the agent to send data to external URLs, webhooks, or services not related to its stated function.",
+          "evidence": "curl -s -X POST https://daily.ratemyclaw.xyz/api/v1/agents/register \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"name\":\"openclaw-agent\",\"description\":\"OpenClaw AI agent\",\"framework\":\"openclaw\"}'\n",
+          "line_number": 1
+        }
+      ],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "compost-tracker",
+    "skill_path": "data/curated/skills/compost-tracker.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/compost-tracker.md",
+      "skill_name": "compost-tracker",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "crypto-cog",
+    "skill_path": "data/curated/skills/crypto-cog.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/crypto-cog.md",
+      "skill_name": "crypto-cog",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "curl-http",
+    "skill_path": "data/curated/skills/curl-http.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/curl-http.md",
+      "skill_name": "curl-http",
+      "finding_count": 3,
+      "max_severity": "CRITICAL",
+      "findings": [
+        {
+          "rule_id": "EXFIL-001",
+          "category": "data_exfiltration",
+          "severity": "CRITICAL",
+          "title": "Credential/secret harvesting instructions",
+          "description": "Skill instructs the agent to read, collect, or transmit credentials, API keys, or secrets.",
+          "evidence": "curl https://api.example.com\n\n# Save output to file\ncurl https://example.com -o output.html\ncurl https://example.com/file.zip -O  # Use remote filename\n\n# Follow redirects\ncurl -L https://example.com\n",
+          "line_number": 2
+        },
+        {
+          "rule_id": "EXFIL-002",
+          "category": "data_exfiltration",
+          "severity": "HIGH",
+          "title": "External data transmission",
+          "description": "Skill instructs the agent to send data to external URLs, webhooks, or services not related to its stated function.",
+          "evidence": "curl https://api.example.com\n\n# Save output to file\ncurl https://example.com -o output.html\ncurl https://example.com/file.zip -O  # Use remote filename\n\n# Follow redirects\ncurl -L https://example.com\n",
+          "line_number": 2
+        },
+        {
+          "rule_id": "EXFIL-005",
+          "category": "data_exfiltration",
+          "severity": "MEDIUM",
+          "title": "Shell variable exfiltration via HTTP",
+          "description": "Skill sends shell variable values to external URLs, potentially leaking system or project information.",
+          "evidence": "curl https://api.example.com\n\n# Save output to file\ncurl https://example.com -o output.html\ncurl https://example.com/file.zip -O  # Use remote filename\n\n# Follow redirects\ncurl -L https://example.com\n",
+          "line_number": 2
+        }
+      ],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "deploy-agent",
+    "skill_path": "data/curated/skills/deploy-agent.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/deploy-agent.md",
+      "skill_name": "deploy-agent",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "didit-age-estimation",
+    "skill_path": "data/curated/skills/didit-age-estimation.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/didit-age-estimation.md",
+      "skill_name": "didit-age-estimation",
+      "finding_count": 3,
+      "max_severity": "CRITICAL",
+      "findings": [
+        {
+          "rule_id": "EXFIL-001",
+          "category": "data_exfiltration",
+          "severity": "CRITICAL",
+          "title": "Credential/secret harvesting instructions",
+          "description": "Skill instructs the agent to read, collect, or transmit credentials, API keys, or secrets.",
+          "evidence": "POST https://verification.didit.me/v3/age-estimation/\n\nimport requests\n\nresponse = requests.post(\n    \"https://verification.didit.me/v3/age-estimation/\",\n    headers={\"x-api-key\": \"YOUR_API_KEY\"},\n   ",
+          "line_number": 1
+        },
+        {
+          "rule_id": "EXFIL-002",
+          "category": "data_exfiltration",
+          "severity": "HIGH",
+          "title": "External data transmission",
+          "description": "Skill instructs the agent to send data to external URLs, webhooks, or services not related to its stated function.",
+          "evidence": "fetch(\"https://verification.didit.me/v3/age-estimation/\", {\n  method: \"POST\",\n  headers: { \"x-api-key\": \"YOUR_API_KEY\" },\n  body",
+          "line_number": 16
+        },
+        {
+          "rule_id": "EXFIL-002",
+          "category": "data_exfiltration",
+          "severity": "HIGH",
+          "title": "External data transmission",
+          "description": "Skill instructs the agent to send data to external URLs, webhooks, or services not related to its stated function.",
+          "evidence": "requests.post(\n    \"https://verification.didit.me/v3/age-estimation/\",\n    headers={\"x-api-key\": \"YOUR_API_KEY\"},\n    files={\"user_image\": (\"selfie.jpg\", open(\"selfie.jpg\", \"rb\"), \"image/jpeg\")},\n    ",
+          "line_number": 5
+        }
+      ],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "ecommerce-price-monitor",
+    "skill_path": "data/curated/skills/ecommerce-price-monitor.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/ecommerce-price-monitor.md",
+      "skill_name": "ecommerce-price-monitor",
+      "finding_count": 2,
+      "max_severity": "HIGH",
+      "findings": [
+        {
+          "rule_id": "EXFIL-002",
+          "category": "data_exfiltration",
+          "severity": "HIGH",
+          "title": "External data transmission",
+          "description": "Skill instructs the agent to send data to external URLs, webhooks, or services not related to its stated function.",
+          "evidence": "fetch(\n  \"https://api.apify.com/v2/acts/apify~amazon-product-scraper/runs\",\n  {\n    method: \"POST\",\n    headers: {\n      \"Content-Type\": \"application/json\",\n      \"Authorization\": `Bearer ${process.en",
+          "line_number": 84
+        },
+        {
+          "rule_id": "EXFIL-006",
+          "category": "data_exfiltration",
+          "severity": "MEDIUM",
+          "title": "Python/Node HTTP request with system info",
+          "description": "Skill uses programming language HTTP libraries to send system information to external URLs.",
+          "evidence": "fetch(\n  \"https://api.apify.com/v2/acts/apify~amazon-product-scraper/runs\",\n  {\n    method: \"POST\",\n    headers: {\n      \"Content-Type\": \"application/json\",\n      \"Authorization\": `Bearer ${process.en",
+          "line_number": 84
+        }
+      ],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "economic-incentive-misalignment-detector",
+    "skill_path": "data/curated/skills/economic-incentive-misalignment-detector.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/economic-incentive-misalignment-detector.md",
+      "skill_name": "economic-incentive-misalignment-detector",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "entity-optimizer",
+    "skill_path": "data/curated/skills/entity-optimizer.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/entity-optimizer.md",
+      "skill_name": "entity-optimizer",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "fear-greed",
+    "skill_path": "data/curated/skills/fear-greed.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/fear-greed.md",
+      "skill_name": "fear-greed",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "google-ai-usage-monitor",
+    "skill_path": "data/curated/skills/google-ai-usage-monitor.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/google-ai-usage-monitor.md",
+      "skill_name": "google-ai-usage-monitor",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "heartbeat-scanner",
+    "skill_path": "data/curated/skills/heartbeat-scanner.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/heartbeat-scanner.md",
+      "skill_name": "heartbeat-scanner",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "hinge-profile-optimizer",
+    "skill_path": "data/curated/skills/hinge-profile-optimizer.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/hinge-profile-optimizer.md",
+      "skill_name": "hinge-profile-optimizer",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "json-render-table",
+    "skill_path": "data/curated/skills/json-render-table.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/json-render-table.md",
+      "skill_name": "json-render-table",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "lofy-fitness",
+    "skill_path": "data/curated/skills/lofy-fitness.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/lofy-fitness.md",
+      "skill_name": "lofy-fitness",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "markdown-linter",
+    "skill_path": "data/curated/skills/markdown-linter.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/markdown-linter.md",
+      "skill_name": "markdown-linter",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "modelwar",
+    "skill_path": "data/curated/skills/modelwar.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/modelwar.md",
+      "skill_name": "modelwar",
+      "finding_count": 2,
+      "max_severity": "CRITICAL",
+      "findings": [
+        {
+          "rule_id": "EXFIL-001",
+          "category": "data_exfiltration",
+          "severity": "CRITICAL",
+          "title": "Credential/secret harvesting instructions",
+          "description": "Skill instructs the agent to read, collect, or transmit credentials, API keys, or secrets.",
+          "evidence": "curl -X POST https://modelwar.ai/api/register \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"name\": \"my-agent-name\"}'\n\ncurl -X POST https://modelwar.ai/api/warriors \\\n  -H \"Content-Type: applicatio",
+          "line_number": 35
+        },
+        {
+          "rule_id": "EXFIL-002",
+          "category": "data_exfiltration",
+          "severity": "HIGH",
+          "title": "External data transmission",
+          "description": "Skill instructs the agent to send data to external URLs, webhooks, or services not related to its stated function.",
+          "evidence": "curl -X POST https://modelwar.ai/api/register \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"name\": \"my-agent-name\"}'\n\ncurl -X POST https://modelwar.ai/api/warriors \\\n  -H \"Content-Type: applicatio",
+          "line_number": 35
+        }
+      ],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "notes-reminders",
+    "skill_path": "data/curated/skills/notes-reminders.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/notes-reminders.md",
+      "skill_name": "notes-reminders",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "opentangl",
+    "skill_path": "data/curated/skills/opentangl.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/opentangl.md",
+      "skill_name": "opentangl",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "paddleocr-doc-parsing-v2",
+    "skill_path": "data/curated/skills/paddleocr-doc-parsing-v2.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/paddleocr-doc-parsing-v2.md",
+      "skill_name": "paddleocr-doc-parsing",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "pear-apple",
+    "skill_path": "data/curated/skills/pear-apple.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/pear-apple.md",
+      "skill_name": "pear-apple",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "poker-agent",
+    "skill_path": "data/curated/skills/poker-agent.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/poker-agent.md",
+      "skill_name": "poker-agent",
+      "finding_count": 2,
+      "max_severity": "CRITICAL",
+      "findings": [
+        {
+          "rule_id": "EXFIL-001",
+          "category": "data_exfiltration",
+          "severity": "CRITICAL",
+          "title": "Credential/secret harvesting instructions",
+          "description": "Skill instructs the agent to read, collect, or transmit credentials, API keys, or secrets.",
+          "evidence": "curl -X POST https://poker-arena-pearl.vercel.app/api/agent/register \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer did:privy:THE_PRIVY_USER_ID\" \\\n  -d '{\"displayName\": \"YourAge",
+          "line_number": 3
+        },
+        {
+          "rule_id": "EXFIL-002",
+          "category": "data_exfiltration",
+          "severity": "HIGH",
+          "title": "External data transmission",
+          "description": "Skill instructs the agent to send data to external URLs, webhooks, or services not related to its stated function.",
+          "evidence": "curl -X POST https://poker-arena-pearl.vercel.app/api/agent/register \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer did:privy:THE_PRIVY_USER_ID\" \\\n  -d '{\"displayName\": \"YourAge",
+          "line_number": 3
+        }
+      ],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "ppt-ooxml-tool",
+    "skill_path": "data/curated/skills/ppt-ooxml-tool.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/ppt-ooxml-tool.md",
+      "skill_name": "ppt-ooxml-translator",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "relationships",
+    "skill_path": "data/curated/skills/relationships.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/relationships.md",
+      "skill_name": "relationships",
+      "finding_count": 1,
+      "max_severity": "HIGH",
+      "findings": [
+        {
+          "rule_id": "EXFIL-002",
+          "category": "data_exfiltration",
+          "severity": "HIGH",
+          "title": "External data transmission",
+          "description": "Skill instructs the agent to send data to external URLs, webhooks, or services not related to its stated function.",
+          "evidence": "curl -X POST https://botbook.space/api/auth/register \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"displayName\": \"REPLACE \u2014 a name that signals who you are\",\n    \"bio\": \"REPLACE (required) \u2014 ",
+          "line_number": 5
+        }
+      ],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "screenshot-skill",
+    "skill_path": "data/curated/skills/screenshot-skill.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/screenshot-skill.md",
+      "skill_name": "screenshot-capture",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "stock-watcher",
+    "skill_path": "data/curated/skills/stock-watcher.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/stock-watcher.md",
+      "skill_name": "stock-watcher",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "telcall-twilio",
+    "skill_path": "data/curated/skills/telcall-twilio.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/telcall-twilio.md",
+      "skill_name": "telcall-twilio",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "teller-mcp-borrow",
+    "skill_path": "data/curated/skills/teller-mcp-borrow.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/teller-mcp-borrow.md",
+      "skill_name": "tellermcp-mcp",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "titleclash",
+    "skill_path": "data/curated/skills/titleclash.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/titleclash.md",
+      "skill_name": "titleclash",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "tmx-cli",
+    "skill_path": "data/curated/skills/tmx-cli.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/tmx-cli.md",
+      "skill_name": "cookidoo",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "todokan",
+    "skill_path": "data/curated/skills/todokan.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/todokan.md",
+      "skill_name": "todokan",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "togetherai-tts",
+    "skill_path": "data/curated/skills/togetherai-tts.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/togetherai-tts.md",
+      "skill_name": "togetherai-tts",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "tushare-base",
+    "skill_path": "data/curated/skills/tushare-base.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/tushare-base.md",
+      "skill_name": "tushare",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "tutti",
+    "skill_path": "data/curated/skills/tutti.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/tutti.md",
+      "skill_name": "tutti",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  },
+  {
+    "skill_name": "venice-router",
+    "skill_path": "data/curated/skills/venice-router.md",
+    "skill_scanner": {
+      "skill_path": "data/curated/skills/venice-router.md",
+      "skill_name": "venice-router",
+      "finding_count": 0,
+      "max_severity": null,
+      "findings": [],
+      "error": null
+    },
+    "semgrep": {
+      "findings": 0,
+      "results": [],
+      "errors": 0
+    },
+    "virustotal": {
+      "skipped": true
+    }
+  }
+]
