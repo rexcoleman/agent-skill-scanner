@@ -1,0 +1,452 @@
+[
+  {
+    "skill_name": "arc-compliance-checker",
+    "category": "coding-agents-and-ides",
+    "source_url": "https://clawskills.sh/skills/trypto1019-arc-compliance-checker",
+    "source_type": "curated",
+    "clawhub_slug": "trypto1019-arc-compliance-checker",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/trypto1019/arc-compliance-checker/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "economic-incentive-misalignment-detector",
+    "category": "coding-agents-and-ides",
+    "source_url": "https://clawskills.sh/skills/andyxinweiminicloud-economic-incentive-misalignment-detector",
+    "source_type": "curated",
+    "clawhub_slug": "andyxinweiminicloud-economic-incentive-misalignment-detector",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/andyxinweiminicloud/economic-incentive-misalignment-detector/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "makesoul",
+    "category": "coding-agents-and-ides",
+    "source_url": "https://clawskills.sh/skills/chengdubjut-makesoul",
+    "source_type": "curated",
+    "clawhub_slug": "chengdubjut-makesoul",
+    "github_raw_url": null,
+    "downloadable": false
+  },
+  {
+    "skill_name": "screenshot-skill",
+    "category": "coding-agents-and-ides",
+    "source_url": "https://clawskills.sh/skills/sunrddd-a11y-screenshot-skill",
+    "source_type": "curated",
+    "clawhub_slug": "sunrddd-a11y-screenshot-skill",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/sunrddd-a11y/screenshot-skill/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "tutti",
+    "category": "coding-agents-and-ides",
+    "source_url": "https://clawskills.sh/skills/nutt-adam-tutti",
+    "source_type": "curated",
+    "clawhub_slug": "nutt-adam-tutti",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/nutt-adam/tutti/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "baeckerherz",
+    "category": "web-and-frontend-development",
+    "source_url": "https://clawskills.sh/skills/kleberbaum-baeckerherz",
+    "source_type": "curated",
+    "clawhub_slug": "kleberbaum-baeckerherz",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/kleberbaum/baeckerherz/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "fear-greed",
+    "category": "web-and-frontend-development",
+    "source_url": "https://clawskills.sh/skills/nextfrontierbuilds-fear-greed",
+    "source_type": "curated",
+    "clawhub_slug": "nextfrontierbuilds-fear-greed",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/nextfrontierbuilds/fear-greed/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "markdown-linter",
+    "category": "web-and-frontend-development",
+    "source_url": "https://clawskills.sh/skills/wanng-ide-markdown-linter",
+    "source_type": "curated",
+    "clawhub_slug": "wanng-ide-markdown-linter",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/wanng-ide/markdown-linter/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "relationships",
+    "category": "web-and-frontend-development",
+    "source_url": "https://clawskills.sh/skills/lucasgeeksinthewood-relationships",
+    "source_type": "curated",
+    "clawhub_slug": "lucasgeeksinthewood-relationships",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/lucasgeeksinthewood/relationships/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "venice-router",
+    "category": "web-and-frontend-development",
+    "source_url": "https://clawskills.sh/skills/plusone-venice-router",
+    "source_type": "curated",
+    "clawhub_slug": "plusone-venice-router",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/plusone/venice-router/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "aliyun-tts",
+    "category": "devops-and-cloud",
+    "source_url": "https://clawskills.sh/skills/guang384-aliyun-tts",
+    "source_type": "curated",
+    "clawhub_slug": "guang384-aliyun-tts",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/guang384/aliyun-tts/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "compost-tracker",
+    "category": "devops-and-cloud",
+    "source_url": "https://clawskills.sh/skills/johstracke-compost-tracker",
+    "source_type": "curated",
+    "clawhub_slug": "johstracke-compost-tracker",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/johstracke/compost-tracker/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "json-render-table",
+    "category": "devops-and-cloud",
+    "source_url": "https://clawskills.sh/skills/sorphwer-json-render-table",
+    "source_type": "curated",
+    "clawhub_slug": "sorphwer-json-render-table",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/sorphwer/json-render-table/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "pear-apple",
+    "category": "devops-and-cloud",
+    "source_url": "https://clawskills.sh/skills/ashtonau-pear-apple",
+    "source_type": "curated",
+    "clawhub_slug": "ashtonau-pear-apple",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/ashtonau/pear-apple/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "teller-mcp-borrow",
+    "category": "devops-and-cloud",
+    "source_url": "https://clawskills.sh/skills/rbcp18-teller-mcp-borrow",
+    "source_type": "curated",
+    "clawhub_slug": "rbcp18-teller-mcp-borrow",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/rbcp18/teller-mcp-borrow/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "amazon-data",
+    "category": "search-and-research",
+    "source_url": "https://clawskills.sh/skills/rhino88-amazon-data",
+    "source_type": "curated",
+    "clawhub_slug": "rhino88-amazon-data",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/rhino88/amazon-data/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "crypto-cog",
+    "category": "search-and-research",
+    "source_url": "https://clawskills.sh/skills/nitishgargiitd-crypto-cog",
+    "source_type": "curated",
+    "clawhub_slug": "nitishgargiitd-crypto-cog",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/nitishgargiitd/crypto-cog/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "japan-news-mcp",
+    "category": "search-and-research",
+    "source_url": "https://clawskills.sh/skills/ajtgjmdjp-japan-news-mcp",
+    "source_type": "curated",
+    "clawhub_slug": "ajtgjmdjp-japan-news-mcp",
+    "github_raw_url": null,
+    "downloadable": false
+  },
+  {
+    "skill_name": "owid-oc",
+    "category": "search-and-research",
+    "source_url": "https://clawskills.sh/skills/rachmann-alexander-owid-oc",
+    "source_type": "curated",
+    "clawhub_slug": "rachmann-alexander-owid-oc",
+    "github_raw_url": null,
+    "downloadable": false
+  },
+  {
+    "skill_name": "tmx-cli",
+    "category": "search-and-research",
+    "source_url": "https://clawskills.sh/skills/lars147-tmx-cli",
+    "source_type": "curated",
+    "clawhub_slug": "lars147-tmx-cli",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/lars147/tmx-cli/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "anycrawl",
+    "category": "browser-and-automation",
+    "source_url": "https://clawskills.sh/skills/techlaai-anycrawl",
+    "source_type": "curated",
+    "clawhub_slug": "techlaai-anycrawl",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/techlaai/anycrawl/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "entity-optimizer",
+    "category": "browser-and-automation",
+    "source_url": "https://clawskills.sh/skills/aaron-he-zhu-entity-optimizer",
+    "source_type": "curated",
+    "clawhub_slug": "aaron-he-zhu-entity-optimizer",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/aaron-he-zhu/entity-optimizer/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "lofy-fitness",
+    "category": "browser-and-automation",
+    "source_url": "https://clawskills.sh/skills/harrey401-lofy-fitness",
+    "source_type": "curated",
+    "clawhub_slug": "harrey401-lofy-fitness",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/harrey401/lofy-fitness/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "poker-agent",
+    "category": "browser-and-automation",
+    "source_url": "https://clawskills.sh/skills/clementsutjiatma-poker-agent",
+    "source_type": "curated",
+    "clawhub_slug": "clementsutjiatma-poker-agent",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/clementsutjiatma/poker-agent/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "tushare-base",
+    "category": "browser-and-automation",
+    "source_url": "https://clawskills.sh/skills/wdblink-tushare-base",
+    "source_type": "curated",
+    "clawhub_slug": "wdblink-tushare-base",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/wdblink/tushare-base/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "arc-warm-wake",
+    "category": "productivity-and-tasks",
+    "source_url": "https://clawskills.sh/skills/trypto1019-arc-warm-wake",
+    "source_type": "curated",
+    "clawhub_slug": "trypto1019-arc-warm-wake",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/trypto1019/arc-warm-wake/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "claw-daily",
+    "category": "productivity-and-tasks",
+    "source_url": "https://clawskills.sh/skills/yanibu2777-claw-daily",
+    "source_type": "curated",
+    "clawhub_slug": "yanibu2777-claw-daily",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/yanibu2777/claw-daily/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "google-ai-usage-monitor",
+    "category": "productivity-and-tasks",
+    "source_url": "https://clawskills.sh/skills/xiaoyaner0201-google-ai-usage-monitor",
+    "source_type": "curated",
+    "clawhub_slug": "xiaoyaner0201-google-ai-usage-monitor",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/xiaoyaner0201/google-ai-usage-monitor/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "ppt-ooxml-tool",
+    "category": "productivity-and-tasks",
+    "source_url": "https://clawskills.sh/skills/jason2be-ppt-ooxml-tool",
+    "source_type": "curated",
+    "clawhub_slug": "jason2be-ppt-ooxml-tool",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/jason2be/ppt-ooxml-tool/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "todokan",
+    "category": "productivity-and-tasks",
+    "source_url": "https://clawskills.sh/skills/banatealab-todokan",
+    "source_type": "curated",
+    "clawhub_slug": "banatealab-todokan",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/banatealab/todokan/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "askhuman",
+    "category": "cli-utilities",
+    "source_url": "https://clawskills.sh/skills/hagiss-askhuman",
+    "source_type": "curated",
+    "clawhub_slug": "hagiss-askhuman",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/hagiss/askhuman/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "curl-http",
+    "category": "cli-utilities",
+    "source_url": "https://clawskills.sh/skills/arnarsson-curl-http",
+    "source_type": "curated",
+    "clawhub_slug": "arnarsson-curl-http",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/arnarsson/curl-http/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "heartbeat-scanner",
+    "category": "cli-utilities",
+    "source_url": "https://clawskills.sh/skills/darshanochandak-heartbeat-scanner",
+    "source_type": "curated",
+    "clawhub_slug": "darshanochandak-heartbeat-scanner",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/darshanochandak/heartbeat-scanner/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "notes-reminders",
+    "category": "cli-utilities",
+    "source_url": "https://clawskills.sh/skills/yusaku-0426-notes-reminders",
+    "source_type": "curated",
+    "clawhub_slug": "yusaku-0426-notes-reminders",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/yusaku-0426/notes-reminders/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "stock-watcher",
+    "category": "cli-utilities",
+    "source_url": "https://clawskills.sh/skills/robin797860-stock-watcher",
+    "source_type": "curated",
+    "clawhub_slug": "robin797860-stock-watcher",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/robin797860/stock-watcher/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "album-cover-generation",
+    "category": "image-and-video-generation",
+    "source_url": "https://clawskills.sh/skills/eftalyurtseven-album-cover-generation",
+    "source_type": "curated",
+    "clawhub_slug": "eftalyurtseven-album-cover-generation",
+    "github_raw_url": null,
+    "downloadable": false
+  },
+  {
+    "skill_name": "didit-age-estimation",
+    "category": "image-and-video-generation",
+    "source_url": "https://clawskills.sh/skills/rosasalberto-didit-age-estimation",
+    "source_type": "curated",
+    "clawhub_slug": "rosasalberto-didit-age-estimation",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/rosasalberto/didit-age-estimation/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "hinge-profile-optimizer",
+    "category": "image-and-video-generation",
+    "source_url": "https://clawskills.sh/skills/b1rdmania-hinge-profile-optimizer",
+    "source_type": "curated",
+    "clawhub_slug": "b1rdmania-hinge-profile-optimizer",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/b1rdmania/hinge-profile-optimizer/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "paddleocr-doc-parsing-v2",
+    "category": "image-and-video-generation",
+    "source_url": "https://clawskills.sh/skills/hiotec-paddleocr-doc-parsing-v2",
+    "source_type": "curated",
+    "clawhub_slug": "hiotec-paddleocr-doc-parsing-v2",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/hiotec/paddleocr-doc-parsing-v2/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "titleclash",
+    "category": "image-and-video-generation",
+    "source_url": "https://clawskills.sh/skills/appback-titleclash",
+    "source_type": "curated",
+    "clawhub_slug": "appback-titleclash",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/appback/titleclash/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "agent-orchestrator",
+    "category": "ai-and-llms",
+    "source_url": "https://clawskills.sh/skills/aatmaan1-agent-orchestrator",
+    "source_type": "curated",
+    "clawhub_slug": "aatmaan1-agent-orchestrator",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/aatmaan1/agent-orchestrator/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "anti-injection-skill",
+    "category": "ai-and-llms",
+    "source_url": "https://clawskills.sh/skills/georges91560-anti-injection-skill",
+    "source_type": "curated",
+    "clawhub_slug": "georges91560-anti-injection-skill",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/georges91560/anti-injection-skill/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "ecommerce-price-monitor",
+    "category": "ai-and-llms",
+    "source_url": "https://clawskills.sh/skills/g4dr-ecommerce-price-monitor",
+    "source_type": "curated",
+    "clawhub_slug": "g4dr-ecommerce-price-monitor",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/g4dr/ecommerce-price-monitor/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "modelwar",
+    "category": "ai-and-llms",
+    "source_url": "https://clawskills.sh/skills/pj4533-modelwar",
+    "source_type": "curated",
+    "clawhub_slug": "pj4533-modelwar",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/pj4533/modelwar/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "togetherai-tts",
+    "category": "ai-and-llms",
+    "source_url": "https://clawskills.sh/skills/marcus20232023-togetherai-tts",
+    "source_type": "curated",
+    "clawhub_slug": "marcus20232023-togetherai-tts",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/marcus20232023/togetherai-tts/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "azure-devops",
+    "category": "git-and-github",
+    "source_url": "https://clawskills.sh/skills/pals-software-azure-devops",
+    "source_type": "curated",
+    "clawhub_slug": "pals-software-azure-devops",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/pals-software/azure-devops/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "deploy-agent",
+    "category": "git-and-github",
+    "source_url": "https://clawskills.sh/skills/sherajdev-deploy-agent",
+    "source_type": "curated",
+    "clawhub_slug": "sherajdev-deploy-agent",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/sherajdev/deploy-agent/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "glab-cli",
+    "category": "git-and-github",
+    "source_url": "https://clawskills.sh/skills/portavion-glab-cli",
+    "source_type": "curated",
+    "clawhub_slug": "portavion-glab-cli",
+    "github_raw_url": null,
+    "downloadable": false
+  },
+  {
+    "skill_name": "opentangl",
+    "category": "git-and-github",
+    "source_url": "https://clawskills.sh/skills/8co-opentangl",
+    "source_type": "curated",
+    "clawhub_slug": "8co-opentangl",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/8co/opentangl/SKILL.md",
+    "downloadable": true
+  },
+  {
+    "skill_name": "telcall-twilio",
+    "category": "git-and-github",
+    "source_url": "https://clawskills.sh/skills/cnvipstar-telcall-twilio",
+    "source_type": "curated",
+    "clawhub_slug": "cnvipstar-telcall-twilio",
+    "github_raw_url": "https://raw.githubusercontent.com/openclaw/skills/main/skills/cnvipstar/telcall-twilio/SKILL.md",
+    "downloadable": true
+  }
+]

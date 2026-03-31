@@ -1,0 +1,257 @@
+{
+  "downloaded": 45,
+  "failed": 0,
+  "skipped": 5,
+  "details": [
+    {
+      "skill_name": "arc-compliance-checker",
+      "status": "downloaded",
+      "size": 5049
+    },
+    {
+      "skill_name": "economic-incentive-misalignment-detector",
+      "status": "downloaded",
+      "size": 9732
+    },
+    {
+      "skill_name": "makesoul",
+      "status": "skipped",
+      "reason": "no github_raw_url"
+    },
+    {
+      "skill_name": "screenshot-skill",
+      "status": "downloaded",
+      "size": 2451
+    },
+    {
+      "skill_name": "tutti",
+      "status": "downloaded",
+      "size": 7520
+    },
+    {
+      "skill_name": "baeckerherz",
+      "status": "downloaded",
+      "size": 2538
+    },
+    {
+      "skill_name": "fear-greed",
+      "status": "downloaded",
+      "size": 3342
+    },
+    {
+      "skill_name": "markdown-linter",
+      "status": "downloaded",
+      "size": 1158
+    },
+    {
+      "skill_name": "relationships",
+      "status": "downloaded",
+      "size": 18859
+    },
+    {
+      "skill_name": "venice-router",
+      "status": "downloaded",
+      "size": 11389
+    },
+    {
+      "skill_name": "aliyun-tts",
+      "status": "downloaded",
+      "size": 2019
+    },
+    {
+      "skill_name": "compost-tracker",
+      "status": "downloaded",
+      "size": 2991
+    },
+    {
+      "skill_name": "json-render-table",
+      "status": "downloaded",
+      "size": 3750
+    },
+    {
+      "skill_name": "pear-apple",
+      "status": "downloaded",
+      "size": 10679
+    },
+    {
+      "skill_name": "teller-mcp-borrow",
+      "status": "downloaded",
+      "size": 3225
+    },
+    {
+      "skill_name": "amazon-data",
+      "status": "downloaded",
+      "size": 5784
+    },
+    {
+      "skill_name": "crypto-cog",
+      "status": "downloaded",
+      "size": 9004
+    },
+    {
+      "skill_name": "japan-news-mcp",
+      "status": "skipped",
+      "reason": "no github_raw_url"
+    },
+    {
+      "skill_name": "owid-oc",
+      "status": "skipped",
+      "reason": "no github_raw_url"
+    },
+    {
+      "skill_name": "tmx-cli",
+      "status": "downloaded",
+      "size": 2879
+    },
+    {
+      "skill_name": "anycrawl",
+      "status": "downloaded",
+      "size": 6911
+    },
+    {
+      "skill_name": "entity-optimizer",
+      "status": "downloaded",
+      "size": 16542
+    },
+    {
+      "skill_name": "lofy-fitness",
+      "status": "downloaded",
+      "size": 2473
+    },
+    {
+      "skill_name": "poker-agent",
+      "status": "downloaded",
+      "size": 6558
+    },
+    {
+      "skill_name": "tushare-base",
+      "status": "downloaded",
+      "size": 4444
+    },
+    {
+      "skill_name": "arc-warm-wake",
+      "status": "downloaded",
+      "size": 2372
+    },
+    {
+      "skill_name": "claw-daily",
+      "status": "downloaded",
+      "size": 2339
+    },
+    {
+      "skill_name": "google-ai-usage-monitor",
+      "status": "downloaded",
+      "size": 4408
+    },
+    {
+      "skill_name": "ppt-ooxml-tool",
+      "status": "downloaded",
+      "size": 784
+    },
+    {
+      "skill_name": "todokan",
+      "status": "downloaded",
+      "size": 10562
+    },
+    {
+      "skill_name": "askhuman",
+      "status": "downloaded",
+      "size": 11460
+    },
+    {
+      "skill_name": "curl-http",
+      "status": "downloaded",
+      "size": 7341
+    },
+    {
+      "skill_name": "heartbeat-scanner",
+      "status": "downloaded",
+      "size": 3911
+    },
+    {
+      "skill_name": "notes-reminders",
+      "status": "downloaded",
+      "size": 898
+    },
+    {
+      "skill_name": "stock-watcher",
+      "status": "downloaded",
+      "size": 1720
+    },
+    {
+      "skill_name": "album-cover-generation",
+      "status": "skipped",
+      "reason": "no github_raw_url"
+    },
+    {
+      "skill_name": "didit-age-estimation",
+      "status": "downloaded",
+      "size": 6607
+    },
+    {
+      "skill_name": "hinge-profile-optimizer",
+      "status": "downloaded",
+      "size": 16807
+    },
+    {
+      "skill_name": "paddleocr-doc-parsing-v2",
+      "status": "downloaded",
+      "size": 4439
+    },
+    {
+      "skill_name": "titleclash",
+      "status": "downloaded",
+      "size": 8602
+    },
+    {
+      "skill_name": "agent-orchestrator",
+      "status": "downloaded",
+      "size": 5743
+    },
+    {
+      "skill_name": "anti-injection-skill",
+      "status": "downloaded",
+      "size": 14933
+    },
+    {
+      "skill_name": "ecommerce-price-monitor",
+      "status": "downloaded",
+      "size": 9831
+    },
+    {
+      "skill_name": "modelwar",
+      "status": "downloaded",
+      "size": 7723
+    },
+    {
+      "skill_name": "togetherai-tts",
+      "status": "downloaded",
+      "size": 449
+    },
+    {
+      "skill_name": "azure-devops",
+      "status": "downloaded",
+      "size": 3499
+    },
+    {
+      "skill_name": "deploy-agent",
+      "status": "downloaded",
+      "size": 6261
+    },
+    {
+      "skill_name": "glab-cli",
+      "status": "skipped",
+      "reason": "no github_raw_url"
+    },
+    {
+      "skill_name": "opentangl",
+      "status": "downloaded",
+      "size": 8583
+    },
+    {
+      "skill_name": "telcall-twilio",
+      "status": "downloaded",
+      "size": 3104
+    }
+  ]
+}

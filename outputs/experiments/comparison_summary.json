@@ -1,0 +1,22 @@
+{
+  "total_skills": 45,
+  "skill_scanner": {
+    "total_findings": 30,
+    "skills_with_findings": 11,
+    "by_category": {
+      "capability_escalation": 4,
+      "data_exfiltration": 20,
+      "encoded_payload": 1,
+      "prompt_injection": 4,
+      "composition_risk": 1
+    }
+  },
+  "semgrep": {
+    "total_findings": 0,
+    "skills_with_findings": 0
+  },
+  "virustotal": {
+    "total_detections": 0,
+    "skills_with_detections": 0
+  }
+}
