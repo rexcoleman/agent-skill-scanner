@@ -30,6 +30,18 @@
 
 **Gate -1 verdict:** [x] PASS — all rows meet minimums, proceed to full design.
 
+### Train/Test Separation Protocol (added pre-code, per Rex review)
+
+**Risk:** 373 known-malicious skills are ground truth. If detection patterns are developed by inspecting these skills and then tested on the same skills, evaluation is circular.
+
+**Mitigation — first-principles pattern development:**
+- Detection patterns are derived from OWASP LLM Top 10, prior research (SkillScan's 14-pattern taxonomy, InjecAgent's injection categories, ToolHijacker's attack vectors), and the Cisco Skill Scanner's public YARA rules — NOT from inspecting the 373 malicious skills.
+- The 373 known-malicious skills are held out entirely as a blind evaluation set.
+- Pattern development uses ONLY: (a) synthetic test cases (E0), (b) the 51 official OpenClaw skills (known-good), and (c) published attack taxonomies.
+- First contact with the 373 malicious skills happens ONLY during E1 evaluation runs.
+
+**Verification:** Git timestamps on pattern rule files must predate any scan output files from the malicious corpus.
+
 ---
 
 ## 1) Project Identity
@@ -151,7 +163,7 @@
 | InjecAgent (Zhan et al.) | 2024 | Runtime injection benchmark, 1,054 cases | Runtime tool outputs. We scan skill definition files statically. |
 | Cisco Skill Scanner | 2026 | YARA + LLM-as-judge for Codex/Cursor | Different formats. No VT comparison published. We target OpenClaw specifically. |
 
-**Expected contribution type:** Novel combination (purpose-built scanner + VirusTotal head-to-head on identical corpus = new empirical data point in a competitive but young field).
+**Expected contribution type:** Novel benchmark/evaluation (first rigorous head-to-head comparison of VirusTotal vs. purpose-built scanning on identical corpus). The scanner is the methodology; the comparison data is the finding. Three existing scanners (Cisco, SkillFortify, SkillScan) mean "first scanner" is false — but "first published VT baseline comparison" remains novel and arguably more useful to practitioners.
 
 **Pre-registered expected outcomes:**
 
