@@ -1,1 +1,675 @@
-[]
+[
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/1password/SKILL.md",
+    "skill_name": "1password",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/apple-notes/SKILL.md",
+    "skill_name": "apple-notes",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/apple-reminders/SKILL.md",
+    "skill_name": "apple-reminders",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/bear-notes/SKILL.md",
+    "skill_name": "bear-notes",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/blogwatcher/SKILL.md",
+    "skill_name": "blogwatcher",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/blucli/SKILL.md",
+    "skill_name": "blucli",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/bluebubbles/SKILL.md",
+    "skill_name": "bluebubbles",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/camsnap/SKILL.md",
+    "skill_name": "camsnap",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/canvas/SKILL.md",
+    "skill_name": "SKILL",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/clawhub/SKILL.md",
+    "skill_name": "clawhub",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/coding-agent/SKILL.md",
+    "skill_name": "coding-agent",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/discord/SKILL.md",
+    "skill_name": "discord",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/eightctl/SKILL.md",
+    "skill_name": "eightctl",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/gemini/SKILL.md",
+    "skill_name": "gemini",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/gh-issues/SKILL.md",
+    "skill_name": "gh-issues",
+    "finding_count": 3,
+    "max_severity": "CRITICAL",
+    "findings": [
+      {
+        "rule_id": "EXFIL-001",
+        "category": "data_exfiltration",
+        "severity": "CRITICAL",
+        "title": "Credential/secret harvesting instructions",
+        "description": "Skill instructs the agent to read, collect, or transmit credentials, API keys, or secrets.",
+        "evidence": "curl -s -H \"Authorization: Bearer $GH_TOKEN\" -H \"Accept: application/vnd.github+json\" ...\n\necho $GH_TOKEN\n\nCONFIG_PATH=\"${OPENCLAW_CONFIG_PATH:-${OPENCLAW_STATE_DIR:-$HOME/.openclaw}/openclaw.json}\"\nc",
+        "line_number": 1
+      },
+      {
+        "rule_id": "EXFIL-002",
+        "category": "data_exfiltration",
+        "severity": "HIGH",
+        "title": "External data transmission",
+        "description": "Skill instructs the agent to send data to external URLs, webhooks, or services not related to its stated function.",
+        "evidence": "curl -s -H \"Authorization: Bearer $GH_TOKEN\" -H \"Accept: application/vnd.github+json\" ...\n\necho $GH_TOKEN\n\nCONFIG_PATH=\"${OPENCLAW_CONFIG_PATH:-${OPENCLAW_STATE_DIR:-$HOME/.openclaw}/openclaw.json}\"\nc",
+        "line_number": 1
+      },
+      {
+        "rule_id": "EXFIL-005",
+        "category": "data_exfiltration",
+        "severity": "MEDIUM",
+        "title": "Shell variable exfiltration via HTTP",
+        "description": "Skill sends shell variable values to external URLs, potentially leaking system or project information.",
+        "evidence": "curl -s -H \"Authorization: Bearer $GH_TOKEN\" -H \"Accept: application/vnd.github+json\" ...\n\necho $GH_TOKEN\n\nCONFIG_PATH=\"${OPENCLAW_CONFIG_PATH:-${OPENCLAW_STATE_DIR:-$HOME/.openclaw}/openclaw.json}\"\nc",
+        "line_number": 1
+      }
+    ],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/gifgrep/SKILL.md",
+    "skill_name": "gifgrep",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/github/SKILL.md",
+    "skill_name": "github",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/gog/SKILL.md",
+    "skill_name": "gog",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/goplaces/SKILL.md",
+    "skill_name": "goplaces",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/healthcheck/SKILL.md",
+    "skill_name": "healthcheck",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/himalaya/SKILL.md",
+    "skill_name": "himalaya",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/imsg/SKILL.md",
+    "skill_name": "imsg",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/mcporter/SKILL.md",
+    "skill_name": "mcporter",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/model-usage/SKILL.md",
+    "skill_name": "model-usage",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/nano-pdf/SKILL.md",
+    "skill_name": "nano-pdf",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/node-connect/SKILL.md",
+    "skill_name": "node-connect",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/notion/SKILL.md",
+    "skill_name": "notion",
+    "finding_count": 2,
+    "max_severity": "HIGH",
+    "findings": [
+      {
+        "rule_id": "EXFIL-002",
+        "category": "data_exfiltration",
+        "severity": "HIGH",
+        "title": "External data transmission",
+        "description": "Skill instructs the agent to send data to external URLs, webhooks, or services not related to its stated function.",
+        "evidence": "curl -X GET \"https://api.notion.com/v1/...\" \\\n  -H \"Authorization: Bearer $NOTION_KEY\" \\\n  -H \"Notion-Version: 2025-09-03\" \\\n  -H \"Content-Type: application/json\"\n\ncurl -X POST \"https://api.notion.com",
+        "line_number": 5
+      },
+      {
+        "rule_id": "EXFIL-005",
+        "category": "data_exfiltration",
+        "severity": "MEDIUM",
+        "title": "Shell variable exfiltration via HTTP",
+        "description": "Skill sends shell variable values to external URLs, potentially leaking system or project information.",
+        "evidence": "curl -X GET \"https://api.notion.com/v1/...\" \\\n  -H \"Authorization: Bearer $NOTION_KEY\" \\\n  -H \"Notion-Version: 2025-09-03\" \\\n  -H \"Content-Type: application/json\"\n\ncurl -X POST \"https://api.notion.com",
+        "line_number": 5
+      }
+    ],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/obsidian/SKILL.md",
+    "skill_name": "obsidian",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/openai-whisper/SKILL.md",
+    "skill_name": "openai-whisper",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/openai-whisper-api/SKILL.md",
+    "skill_name": "openai-whisper-api",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/openhue/SKILL.md",
+    "skill_name": "openhue",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/oracle/SKILL.md",
+    "skill_name": "oracle",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/ordercli/SKILL.md",
+    "skill_name": "ordercli",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/peekaboo/SKILL.md",
+    "skill_name": "peekaboo",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/sag/SKILL.md",
+    "skill_name": "sag",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/session-logs/SKILL.md",
+    "skill_name": "session-logs",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/sherpa-onnx-tts/SKILL.md",
+    "skill_name": "sherpa-onnx-tts",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/skill-creator/SKILL.md",
+    "skill_name": "skill-creator",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/slack/SKILL.md",
+    "skill_name": "slack",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/songsee/SKILL.md",
+    "skill_name": "songsee",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/sonoscli/SKILL.md",
+    "skill_name": "sonoscli",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/spotify-player/SKILL.md",
+    "skill_name": "spotify-player",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/summarize/SKILL.md",
+    "skill_name": "summarize",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/things-mac/SKILL.md",
+    "skill_name": "things-mac",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/tmux/SKILL.md",
+    "skill_name": "tmux",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/trello/SKILL.md",
+    "skill_name": "trello",
+    "finding_count": 3,
+    "max_severity": "CRITICAL",
+    "findings": [
+      {
+        "rule_id": "EXFIL-001",
+        "category": "data_exfiltration",
+        "severity": "CRITICAL",
+        "title": "Credential/secret harvesting instructions",
+        "description": "Skill instructs the agent to read, collect, or transmit credentials, API keys, or secrets.",
+        "evidence": "curl -s \"https://api.trello.com/1/members/me/boards?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN\" | jq '.[] | {name, id}'\n\ncurl -s \"https://api.trello.com/1/boards/{boardId}/lists?key=$TRELLO_API_KEY&token",
+        "line_number": 4
+      },
+      {
+        "rule_id": "EXFIL-002",
+        "category": "data_exfiltration",
+        "severity": "HIGH",
+        "title": "External data transmission",
+        "description": "Skill instructs the agent to send data to external URLs, webhooks, or services not related to its stated function.",
+        "evidence": "curl -s \"https://api.trello.com/1/members/me/boards?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN\" | jq '.[] | {name, id}'\n\ncurl -s \"https://api.trello.com/1/boards/{boardId}/lists?key=$TRELLO_API_KEY&token",
+        "line_number": 4
+      },
+      {
+        "rule_id": "EXFIL-005",
+        "category": "data_exfiltration",
+        "severity": "MEDIUM",
+        "title": "Shell variable exfiltration via HTTP",
+        "description": "Skill sends shell variable values to external URLs, potentially leaking system or project information.",
+        "evidence": "curl -s \"https://api.trello.com/1/members/me/boards?key=$TRELLO_API_KEY&token=$TRELLO_TOKEN\" | jq '.[] | {name, id}'\n\ncurl -s \"https://api.trello.com/1/boards/{boardId}/lists?key=$TRELLO_API_KEY&token",
+        "line_number": 4
+      }
+    ],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/video-frames/SKILL.md",
+    "skill_name": "video-frames",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/voice-call/SKILL.md",
+    "skill_name": "voice-call",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/wacli/SKILL.md",
+    "skill_name": "wacli",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/weather/SKILL.md",
+    "skill_name": "weather",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  },
+  {
+    "skill_path": "/home/azureuser/openclaw/skills/xurl/SKILL.md",
+    "skill_name": "xurl",
+    "finding_count": 4,
+    "max_severity": "CRITICAL",
+    "findings": [
+      {
+        "rule_id": "CAP-002",
+        "category": "capability_escalation",
+        "severity": "HIGH",
+        "title": "System modification commands",
+        "description": "Skill instructs destructive or system-modifying operations.",
+        "evidence": "| bash",
+        "line_number": 5
+      },
+      {
+        "rule_id": "COMP-003",
+        "category": "composition_risk",
+        "severity": "LOW",
+        "title": "Overly broad file system access",
+        "description": "Skill accesses files or directories far outside its apparent scope.",
+        "evidence": "read pics\" --media-id 111 --media-id 222\n\n# Reply to a post (by ID or URL)\nxurl reply 1234567890 \"Great point!\"\nxurl reply https://x.com/user/status/1234567890 \"Agreed!\"\n\n# Reply with media\nxurl reply",
+        "line_number": 23
+      },
+      {
+        "rule_id": "EXFIL-001",
+        "category": "data_exfiltration",
+        "severity": "CRITICAL",
+        "title": "Credential/secret harvesting instructions",
+        "description": "Skill instructs the agent to read, collect, or transmit credentials, API keys, or secrets.",
+        "evidence": "curl -fsSL https://raw.githubusercontent.com/xdevplatform/xurl/main/install.sh | bash\n\ngo install github.com/xdevplatform/xurl@latest\n\nxurl auth oauth2\n\nxurl auth default prod-app          # set defau",
+        "line_number": 5
+      },
+      {
+        "rule_id": "EXFIL-002",
+        "category": "data_exfiltration",
+        "severity": "HIGH",
+        "title": "External data transmission",
+        "description": "Skill instructs the agent to send data to external URLs, webhooks, or services not related to its stated function.",
+        "evidence": "curl -fsSL https://raw.githubusercontent.com/xdevplatform/xurl/main/install.sh | bash\n\ngo install github.com/xdevplatform/xurl@latest\n\nxurl auth oauth2\n\nxurl auth default prod-app          # set defau",
+        "line_number": 5
+      }
+    ],
+    "error": null,
+    "semgrep": {
+      "findings": 0
+    }
+  }
+]

@@ -151,6 +151,18 @@
 
 ---
 
+## 8.1) Threats to Validity
+
+| Threat | Type | Mitigation |
+|--------|------|-----------|
+| Curated skills may not represent the broader registry | External validity | Sample stratified across 10 categories; compare official (51) vs community (45) detection rates |
+| Pattern-based scanner may overfit to specific attack formats | Construct validity | Rules derived from first principles (OWASP, SkillScan taxonomy), not from inspecting test corpus; train/test separation enforced |
+| semgrep comparison may be unfair — semgrep isn't designed for markdown | Internal validity | This IS the finding: generic SAST doesn't parse skill files. Also tested `p/security-audit` and `p/command-injection` rulesets explicitly |
+| Manual ground truth annotation by single agent, not human experts | Construct validity | Accept as limitation; report annotation methodology; flag for independent validation |
+| 45-skill sample may miss rare attack patterns | Statistical conclusion validity | Bootstrap CIs on detection rates; note sample limitations in findings |
+
+---
+
 ## 8a) Novelty Plan — Target: 7/10
 
 **Prior art search strategy:** Google Scholar, arXiv, Semantic Scholar, GitHub for: "agent skill security scanning", "LLM plugin vulnerability detection", "OpenClaw security", "tool use prompt injection", "MCP server security", "AI supply chain scanning". 10 papers differentiated (see §8).
