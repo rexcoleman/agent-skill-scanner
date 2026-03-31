@@ -36,7 +36,7 @@
 
 **Project:** Agent Skill Security Scanner — VirusTotal Baseline Comparison
 **Target venue:** arXiv preprint + AISec Workshop (ACM CCS) (Workshop → Tier 2 stretch)
-**Design lock commit:** TO BE SET
+**Design lock commit:** `6aa582c`
 **Design lock date:** 2026-03-31
 
 > **Gate 0.5 rule:** This document must be committed before any Phase 1 scanning script is executed.
