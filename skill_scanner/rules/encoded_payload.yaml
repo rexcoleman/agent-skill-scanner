@@ -1,0 +1,39 @@
+# Encoded Payload Detection Rules
+# Source: malware analysis first principles, software supply chain attack patterns
+# NOTE: Base64 decoding is handled by the engine's built-in detector (ENC-001).
+# These rules catch encoding/obfuscation patterns the regex engine can detect.
+
+rules:
+  - id: ENC-002
+    category: encoded_payload
+    severity: HIGH
+    title: Hex-encoded shell commands
+    description: Skill contains hex-encoded strings that may hide malicious commands.
+    target: full_text
+    patterns:
+      - "\\\\x[0-9a-fA-F]{2}(?:\\\\x[0-9a-fA-F]{2}){10,}"
+      - "(?:echo\\s+-e|printf)\\s+[\"'](?:\\\\x[0-9a-fA-F]{2}){5,}"
+      - "\\$'\\\\x[0-9a-fA-F]{2}"
+
+  - id: ENC-003
+    category: encoded_payload
+    severity: MEDIUM
+    title: Unicode escape obfuscation
+    description: Skill uses unicode escapes that may hide instructions from human reviewers.
+    target: full_text
+    patterns:
+      - "(?:\\\\u[0-9a-fA-F]{4}){5,}"
+      - "String\\.fromCharCode\\(.*,.*,.*,.*\\)"
+      - "chr\\(\\d+\\).*chr\\(\\d+\\).*chr\\(\\d+\\)"
+
+  - id: ENC-004
+    category: encoded_payload
+    severity: MEDIUM
+    title: Base64 decode and execute pattern
+    description: Skill decodes base64 content and pipes it to execution.
+    target: code_blocks
+    patterns:
+      - "base64\\s+(?:-d|--decode).*\\|.*(?:bash|sh|python|node|eval)"
+      - "echo.*\\|\\s*base64\\s+(?:-d|--decode)\\s*\\|"
+      - "atob\\(.*\\)"
+      - "b64decode\\(.*\\)"

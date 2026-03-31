@@ -10,7 +10,7 @@ from .engine import DetectionEngine, ScanResult, Severity
 from .rules import load_rules_from_yaml
 
 
-DEFAULT_RULES_DIR = Path(__file__).parent.parent / "rules"
+DEFAULT_RULES_DIR = Path(__file__).parent / "rules"
 
 
 def find_skill_files(path: Path) -> list[Path]:
@@ -103,6 +103,7 @@ def main():
     scan_parser.add_argument("--rules", "-r", type=Path, default=DEFAULT_RULES_DIR, help="Path to rules directory")
     scan_parser.add_argument("--output", "-o", choices=["json", "table"], default="table", help="Output format")
     scan_parser.add_argument("--min-severity", choices=["CRITICAL", "HIGH", "MEDIUM", "LOW", "INFO"], default="INFO", help="Minimum severity to report")
+    scan_parser.add_argument("--quiet", "-q", action="store_true", help="Suppress output, exit code only (0=clean, 1=findings)")
 
     args = parser.parse_args()
 
@@ -122,10 +123,11 @@ def main():
                 if severity_order.index(f.severity.value) <= min_idx
             ]
 
-        if args.output == "json":
-            print(json.dumps([r.to_dict() for r in results], indent=2))
-        else:
-            print(format_table(results))
+        if not args.quiet:
+            if args.output == "json":
+                print(json.dumps([r.to_dict() for r in results], indent=2))
+            else:
+                print(format_table(results))
 
         # Exit code: 1 if any HIGH or CRITICAL findings
         if any(
