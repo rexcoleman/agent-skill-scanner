@@ -1,8 +1,10 @@
 # agent-skill-scanner
 
+> Last updated: 2026-03-31
+
 Scan agent skill files for security vulnerabilities. 22 detection rules across prompt injection, capability escalation, data exfiltration, encoded payloads, and composition risks.
 
-Built for [OpenClaw](https://github.com/openclaw) and MCP skill files. Generic SAST tools (semgrep, CodeQL) produce zero detections on these formats because they lack rules for markdown-embedded code and YAML skill definitions. This scanner fills that gap.
+Built for [OpenClaw](https://github.com/openclaw) and Model Context Protocol (MCP) skill files. Generic SAST tools (semgrep, CodeQL) produce zero detections on these formats because they lack rules for markdown-embedded code and YAML skill definitions. This scanner fills that gap.
 
 ## Install
 
