@@ -1,0 +1,82 @@
+[
+  {
+    "name": "filesystem",
+    "source": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+    "format": "ts",
+    "domain": "file-system",
+    "file": "01_filesystem.md",
+    "tool_count": 14
+  },
+  {
+    "name": "memory",
+    "source": "https://github.com/modelcontextprotocol/servers/tree/main/src/memory",
+    "format": "ts",
+    "domain": "knowledge-graph",
+    "file": "02_memory.md",
+    "tool_count": 9
+  },
+  {
+    "name": "fetch",
+    "source": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
+    "format": "py",
+    "domain": "web-fetch",
+    "file": "03_fetch.md",
+    "tool_count": 1
+  },
+  {
+    "name": "git",
+    "source": "https://github.com/modelcontextprotocol/servers/tree/main/src/git",
+    "format": "py",
+    "domain": "version-control",
+    "file": "04_git.md",
+    "tool_count": 12
+  },
+  {
+    "name": "time",
+    "source": "https://github.com/modelcontextprotocol/servers/tree/main/src/time",
+    "format": "py",
+    "domain": "time-timezone",
+    "file": "05_time.md",
+    "tool_count": 2
+  },
+  {
+    "name": "github-mcp-server",
+    "source": "https://github.com/github/github-mcp-server",
+    "format": "go",
+    "domain": "github-api",
+    "file": "06_github.md",
+    "tool_count": 12
+  },
+  {
+    "name": "playwright-mcp",
+    "source": "https://github.com/microsoft/playwright-mcp",
+    "format": "ts",
+    "domain": "browser-automation",
+    "file": "07_playwright.md",
+    "tool_count": 30
+  },
+  {
+    "name": "firecrawl-mcp-server",
+    "source": "https://github.com/firecrawl/firecrawl-mcp-server",
+    "format": "ts",
+    "domain": "web-scraping",
+    "file": "08_firecrawl.md",
+    "tool_count": 13
+  },
+  {
+    "name": "ghidra-mcp",
+    "source": "https://github.com/LaurieWired/GhidraMCP",
+    "format": "py",
+    "domain": "reverse-engineering",
+    "file": "09_ghidra.md",
+    "tool_count": 15
+  },
+  {
+    "name": "aws-sns-sqs-mcp-server",
+    "source": "https://github.com/awslabs/mcp/tree/main/src/amazon-sns-sqs-mcp-server",
+    "format": "py",
+    "domain": "cloud-messaging",
+    "file": "10_aws_sns_sqs.md",
+    "tool_count": 14
+  }
+]

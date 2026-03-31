@@ -1,0 +1,52 @@
+{
+  "mcnemar_test": {
+    "contingency_table": {
+      "a": 0,
+      "b": 11,
+      "c": 0,
+      "d": 34
+    },
+    "n": 45,
+    "chi2": 9.0909,
+    "p_value": 0.002569,
+    "significant": true,
+    "interpretation": "skill-scanner detected threats in 11 skills where semgrep found nothing. McNemar's chi2=9.09, p=0.0026. Significant at alpha=0.05."
+  },
+  "bootstrap_ci_detection_rate": {
+    "skill_scanner_rate": 0.2444,
+    "semgrep_rate": 0.0,
+    "observed_difference": 0.2444,
+    "bootstrap_ci_95": [
+      0.1333,
+      0.3778
+    ],
+    "n_bootstrap": 10000,
+    "n_skills": 45,
+    "interpretation": "Detection rate: skill-scanner 24.4% vs semgrep 0.0%. Difference: 24.4% (95% CI: [13.3%, 37.8%]). CI excludes 0 \u2014 difference is statistically significant."
+  },
+  "bootstrap_ci_findings_per_skill": {
+    "mean_findings_per_skill": 0.667,
+    "ci_95": [
+      0.267,
+      1.178
+    ],
+    "interpretation": "Mean findings per skill: 0.67 (95% CI: [0.27, 1.18])"
+  },
+  "cohens_kappa": {
+    "n_annotated": 45,
+    "n_flagged": 1,
+    "observed_agreement": 0.7778,
+    "expected_agreement": 0.7442,
+    "cohens_kappa": 0.1313,
+    "confusion_matrix": {
+      "tp": 1,
+      "fp": 10,
+      "fn": 0,
+      "tn": 34
+    },
+    "precision": 0.0909,
+    "recall": 1.0,
+    "f1": 0.1667,
+    "interpretation": "Cohen's kappa = 0.131 (slight agreement). Precision: 9.1%, Recall: 100.0%, F1: 0.17. Scanner flags 10 FPs out of 44 clean skills on curated corpus."
+  }
+}

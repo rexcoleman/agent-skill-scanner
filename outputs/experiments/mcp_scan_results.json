@@ -1,0 +1,82 @@
+[
+  {
+    "skill_path": "data/mcp/01_filesystem.md",
+    "skill_name": "01_filesystem",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null
+  },
+  {
+    "skill_path": "data/mcp/02_memory.md",
+    "skill_name": "02_memory",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null
+  },
+  {
+    "skill_path": "data/mcp/03_fetch.md",
+    "skill_name": "03_fetch",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null
+  },
+  {
+    "skill_path": "data/mcp/04_git.md",
+    "skill_name": "04_git",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null
+  },
+  {
+    "skill_path": "data/mcp/05_time.md",
+    "skill_name": "05_time",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null
+  },
+  {
+    "skill_path": "data/mcp/06_github.md",
+    "skill_name": "06_github",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null
+  },
+  {
+    "skill_path": "data/mcp/07_playwright.md",
+    "skill_name": "07_playwright",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null
+  },
+  {
+    "skill_path": "data/mcp/08_firecrawl.md",
+    "skill_name": "08_firecrawl",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null
+  },
+  {
+    "skill_path": "data/mcp/09_ghidra.md",
+    "skill_name": "09_ghidra",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null
+  },
+  {
+    "skill_path": "data/mcp/10_aws_sns_sqs.md",
+    "skill_name": "10_aws_sns_sqs",
+    "finding_count": 0,
+    "max_severity": null,
+    "findings": [],
+    "error": null
+  }
+]

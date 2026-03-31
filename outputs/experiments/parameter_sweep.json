@@ -1,0 +1,107 @@
+{
+  "body_length_sweep": {
+    "0": {
+      "min_body_length": 0,
+      "skills_scanned": 40,
+      "total_findings": 22,
+      "skills_flagged": 7
+    },
+    "50": {
+      "min_body_length": 50,
+      "skills_scanned": 39,
+      "total_findings": 22,
+      "skills_flagged": 7
+    },
+    "100": {
+      "min_body_length": 100,
+      "skills_scanned": 39,
+      "total_findings": 22,
+      "skills_flagged": 7
+    },
+    "200": {
+      "min_body_length": 200,
+      "skills_scanned": 39,
+      "total_findings": 22,
+      "skills_flagged": 7
+    }
+  },
+  "category_ablation": {
+    "baseline": {
+      "removed": "none",
+      "total_findings": 22,
+      "skills_flagged": 7
+    },
+    "prompt_injection": {
+      "removed": "prompt_injection",
+      "rules_removed": 5,
+      "total_findings": 18,
+      "skills_flagged": 7,
+      "findings_drop": 4,
+      "drop_pct": 18.2
+    },
+    "capability_escalation": {
+      "removed": "capability_escalation",
+      "rules_removed": 5,
+      "total_findings": 19,
+      "skills_flagged": 7,
+      "findings_drop": 3,
+      "drop_pct": 13.6
+    },
+    "data_exfiltration": {
+      "removed": "data_exfiltration",
+      "rules_removed": 6,
+      "total_findings": 8,
+      "skills_flagged": 1,
+      "findings_drop": 14,
+      "drop_pct": 63.6
+    },
+    "encoded_payload": {
+      "removed": "encoded_payload",
+      "rules_removed": 3,
+      "total_findings": 21,
+      "skills_flagged": 7,
+      "findings_drop": 1,
+      "drop_pct": 4.5
+    },
+    "composition_risk": {
+      "removed": "composition_risk",
+      "rules_removed": 3,
+      "total_findings": 22,
+      "skills_flagged": 7,
+      "findings_drop": 0,
+      "drop_pct": 0.0
+    }
+  },
+  "rule_subset_sweep": {
+    "25pct": {
+      "rule_pct": 25,
+      "n_rules": 5,
+      "total_findings": 3,
+      "skills_flagged": 1
+    },
+    "50pct": {
+      "rule_pct": 50,
+      "n_rules": 11,
+      "total_findings": 15,
+      "skills_flagged": 7
+    },
+    "75pct": {
+      "rule_pct": 75,
+      "n_rules": 16,
+      "total_findings": 17,
+      "skills_flagged": 7
+    },
+    "100pct": {
+      "rule_pct": 100,
+      "n_rules": 22,
+      "total_findings": 22,
+      "skills_flagged": 7
+    }
+  },
+  "robustness": {
+    "body_length_robust": true,
+    "most_impactful_category": "data_exfiltration",
+    "most_impactful_drop_pct": 63.6,
+    "rule_library_robust": true
+  }
+}
